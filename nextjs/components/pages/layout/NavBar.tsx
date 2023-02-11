@@ -4,32 +4,27 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import Tooltip from '@mui/material/Tooltip';
 
+import HomeIcon from '@mui/icons-material/Home';
+import ViewModuleIcon from '@mui/icons-material/ViewModule';
+import CollectionsIcon from '@mui/icons-material/Collections';
+import ContactsIcon from '@mui/icons-material/Contacts';
+
 type LinkTabProps = {
     label: string;
     href: string;
     disabled?: boolean
     value?: string
+    icon?: any
 }
-
-// const LinkTab = ((props: LinkTabProps) => {
-//     return (
-//       <Tab
-//         component="a"
-//         onClick={(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-//           event.preventDefault();
-//         }}
-//         {...props}
-//       />
-//     );
-// })
 
 const NavBar = ( () => {
     const [value, setValue] = useState('about');
 
     const links:LinkTabProps[] = [
-        { label:'About', href:'/about', value:'about' },
-        { label:'Modules', href:'/modules', disabled: true, value:'modules' },
-        { label:'Contacts', href:'/contacts', disabled: true, value:'contacts' },
+        { label:'About', href:'/about', value:'about', icon: <HomeIcon />},
+        { label:'Modules', href:'/modules', disabled: true, value:'modules', icon: <ViewModuleIcon /> },
+        { label:'Gallery', href:'/gallery', disabled: true, value:'gallery', icon: <CollectionsIcon /> },
+        { label:'Contacts', href:'/contacts', disabled: true, value:'contacts', icon: <ContactsIcon /> },
     ]
 
     const navigate = ((event: React.SyntheticEvent) => {
@@ -56,13 +51,27 @@ const NavBar = ( () => {
                                 return (
                                     <Tooltip title="Coming Soon!">
                                         <span>
-                                            <Tab label={link.label} href={link.href} value={link.value} disabled />
+                                            <Tab icon={link.icon} 
+                                                 iconPosition="start" 
+                                                 label={link.label} 
+                                                 href={link.href} 
+                                                 value={link.value} 
+                                                 disabled 
+                                                 style={{color: 'black'}}
+                                            />
                                         </span>
                                     </Tooltip>
                                 )
                             } else {
                                 return (
-                                    <Tab onClick={navigate} style={{color: 'white'}} label={link.label} href={link.href} value={link.value} />
+                                    <Tab onClick={navigate} 
+                                         icon={link.icon} 
+                                         iconPosition="start" 
+                                         label={link.label} 
+                                         href={link.href} 
+                                         value={link.value} 
+                                         style={{color: 'green'}}
+                                    />
                                 )
                             }
                         })
