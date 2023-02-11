@@ -2,17 +2,36 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 const AboutContent = (() => {
+
+    const handleMouseEnter = () => {
+        console.log('Mouse Entered')
+     };
+
+     const handleMouseLeave = () => {
+        console.log('Mouse Leaved')
+     };
+
     return (
         <>
             <Box 
                 sx={{
                     margin: 'auto',
                     width: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
                 }}
             >
-                <Typography variant="h2" gutterBottom sx={{textAlign: 'center', color: 'green'}}>
-                    ABOUT
-                </Typography>
+                <img 
+                    src='about_profile.jpg' 
+                    loading="lazy"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    style={{
+                        width: '60%',
+                        height: '20%',
+                        margin: 'auto',                    
+                    }}
+                />
             </Box>
             <Box
                 sx={{
@@ -20,12 +39,12 @@ const AboutContent = (() => {
                     width: '40%',
                 }}
             >
-                <Typography variant="h6" gutterBottom>
-                    Progressive Training and Learning Center (PTLC) was established by Mr. Abelardo Marva III, 
-                    RRT on April 2012 in Saog, Marilao, Bulacan. It is an institution that offers the graduates 
-                    of Bachelor of Science in Radiologic Technology a review program that will prepare them for their 
-                    licensure examination. The institution produced topnotchers over the past years and will continue 
-                    to nurture successful Radiologic Technologists.
+                <Typography id='about__main-text' variant="h6" gutterBottom>
+                    Progressive Training and Learning Center (PTLC) was established by <span className='about__highlighted' style={{color:'green'}}> Mr. Abelardo Marva III, RRT </span> 
+                    on April 2012 in Saog, Marilao, Bulacan. It is an <span className='about__highlighted' style={{color:'green'}}> institution </span> that offers the graduates 
+                    of Bachelor of Science in Radiologic Technology a <span className='about__highlighted' style={{color:'green'}}>review program</span> that will prepare them for their 
+                    <span className='about__highlighted' style={{color:'green'}}> licensure examination</span>. The institution produced <span className='about__highlighted' style={{color:'green'}}> topnotchers </span> 
+                    over the past years and will <span className='about__highlighted' style={{color:'green'}}> continue to nurture successful Radiologic Technologists</span>.
                 </Typography>
             </Box>
         </>
