@@ -16,8 +16,8 @@ const About = (() => {
                     height: '92vh',
                     width: '100%',
                     borderBottom: '5px solid green',
-                    // backgroundImage: 'url(about.png)',
-                    // backgroundSize: 'cover'
+                    backgroundImage: 'url(about_bg.jpg)',
+                    backgroundSize: 'cover'
                 }} 
             >
                 <AboutContent />
@@ -30,7 +30,7 @@ const About = (() => {
                     width: '100%',
                 }} 
             >
-
+                <AboutGallery />
             </Box>
         </>
     )
