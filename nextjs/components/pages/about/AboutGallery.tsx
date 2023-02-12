@@ -1,4 +1,6 @@
 
+import { useState } from 'react'
+
 import AboutGalleryDetails from '@/components/pages/about/AboutGalleryDetails'
 
 import Box from '@mui/material/Box';
@@ -22,6 +24,14 @@ const topnotchers: Topnotchers[] = [
 ]
 
 const AboutGallery = (() => {
+
+    const [expanded, setExpanded] = useState<string | false>(false);
+
+    const handleChange =
+    (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+      setExpanded(isExpanded ? panel : false);
+    };
+
     return (
         <>
         <Box 
@@ -30,10 +40,13 @@ const AboutGallery = (() => {
                 width: '90%',
             }}
         >
+          <Typography variant="h4" gutterBottom sx={{ color: 'green' }}>
+              TOPNOTCHERS
+          </Typography>
           {
             topnotchers.map( (topnotcher, index) => {
                 return (
-                    <Accordion key={index}>
+                    <Accordion key={index} expanded={expanded === `panel${index}`} onChange={handleChange(`panel${index}`)}>
                     <AccordionSummary
                       expandIcon={<ExpandMoreIcon />}
                       aria-controls="panel1a-content"
@@ -41,7 +54,7 @@ const AboutGallery = (() => {
                     >
                       <Typography>{topnotcher.title}</Typography>
                     </AccordionSummary>
-                    <AccordionDetails>
+                    <AccordionDetails sx={{ display: 'flex', alignItems:'center' }}>
                       <AboutGalleryDetails cards={topnotcher.card} />
                     </AccordionDetails>
                   </Accordion>
