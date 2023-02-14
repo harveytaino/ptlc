@@ -73,7 +73,7 @@ const AboutContent = (() => {
         setSnackBarMessage('Email Sending!')
         setSnackbarOpen(true)
 
-        emailjs.send(process.env.EMAIL_SERVICE_ID, process.env.EMAIL_TEMPLATE, email, process.env.EMAIL_PUBLIC_KEY)
+        emailjs.send(process.env.EMAIL_SERVICE_ID ?? 'Test', process.env.EMAIL_TEMPLATE ?? 'Test', email, process.env.EMAIL_PUBLIC_KEY ?? 'Test')
             .then(function(response: any) {
                 setSnackBarStatus('success')
                 setSnackBarMessage('Email Sent Successfully!')
