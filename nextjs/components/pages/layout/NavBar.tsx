@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useRouter } from 'next/router'
+
+import { useState, useEffect } from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
@@ -18,23 +20,25 @@ type LinkTabProps = {
 }
 
 const NavBar = ( () => {
-    const [value, setValue] = useState('about');
+
+    const router = useRouter()
+
+    const [value, setValue] = useState(router.pathname);
 
     const links:LinkTabProps[] = [
-        { label:'About', href:'/about', value:'about', icon: <HomeIcon />},
-        { label:'Modules', href:'/modules', disabled: true, value:'modules', icon: <ViewModuleIcon /> },
-        { label:'Gallery', href:'/gallery', disabled: true, value:'gallery', icon: <CollectionsIcon /> },
-        { label:'Contacts', href:'/contacts', disabled: true, value:'contacts', icon: <ContactsIcon /> },
+        { label:'About', href:'/about', value:'/about', icon: <HomeIcon />},
+        { label:'Gallery', href:'/gallery', disabled: true, value:'/gallery', icon: <CollectionsIcon /> },
+        { label:'Contacts', href:'/contacts', disabled: false, value:'/contacts', icon: <ContactsIcon /> },
     ]
 
     const navigate = ((event: React.SyntheticEvent) => {
         event.preventDefault();
-        console.log('Does not refresh')
     })
 
     const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+      event.preventDefault()
       setValue(newValue);
-      console.log(newValue)
+      router.push(newValue)
     };
 
     return (
@@ -43,15 +47,17 @@ const NavBar = ( () => {
                 <Tabs
                     value={value}
                     onChange={handleChange}
-                    TabIndicatorProps={{style: {background:'white'}}}
+                    TabIndicatorProps={{style: {background:'green', color:'green'}}}
                 >
                     {
-                        links.map( (link) => {
+                        links.map( (link, index) => {
                             if (link?.disabled) {
                                 return (
-                                    <Tooltip title="Coming Soon!">
+                                    <Tooltip key={index} title="Coming Soon!">
                                         <span>
-                                            <Tab icon={link.icon} 
+                                            <Tab 
+                                                 key={index}
+                                                 icon={link.icon} 
                                                  iconPosition="start" 
                                                  label={link.label} 
                                                  href={link.href} 
@@ -64,14 +70,16 @@ const NavBar = ( () => {
                                 )
                             } else {
                                 return (
-                                    <Tab onClick={navigate} 
-                                         icon={link.icon} 
-                                         iconPosition="start" 
-                                         label={link.label} 
-                                         href={link.href} 
-                                         value={link.value} 
-                                         style={{color: 'green'}}
-                                    />
+                                    <Tab 
+                                        key={index}
+                                        onClick={navigate} 
+                                        icon={link.icon} 
+                                        iconPosition="start" 
+                                        label={link.label} 
+                                        href={link.href} 
+                                        value={link.value} 
+                                        style={{color: 'green'}}
+                                    />     
                                 )
                             }
                         })
