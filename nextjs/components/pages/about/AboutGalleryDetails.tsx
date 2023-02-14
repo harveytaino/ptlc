@@ -14,7 +14,7 @@ const modalStyle = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: '900px',
+  width: { xs: 400, sm: 700, md: 900 },
 };
 
 const AboutGalleryDetails = (( cards:any ) => {

@@ -13,14 +13,6 @@ const Header = ( () => {
             <Box sx={{ display: 'flex' }}>
                 <AppBar component="nav" style={{backgroundColor: 'white'}}>
                     <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        edge="start"
-                        sx={{ mr: 2, display: { sm: 'none' } }}
-                    >
-                        Icon
-                    </IconButton>
                     <Box sx={{ 
                             display: 'flex',
                             alignItems: 'center',
@@ -32,9 +24,9 @@ const Header = ( () => {
                         <Typography
                             variant="h6"
                             component="div"
-                            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block', color:'green' }, fontSize: 30 }}
+                            sx={{ flexGrow: 1, display: { xs: 'none', md: 'block', color:'green' }, fontSize: 30 }}
                         >
-                            Progressive Learning and Training Center
+                            PTLC
                         </Typography>
                     </Box>
                     <Box>
