@@ -11,7 +11,7 @@ const About = (() => {
             <Layout title='About' />
             <Box 
                 sx={{ 
-                    marginTop: 9,
+                    marginTop: { xs: 7, md: 9 },
                     height: '92vh',
                     width: '100%',
                     overflowY: 'auto'

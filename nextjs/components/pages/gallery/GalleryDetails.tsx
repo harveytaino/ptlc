@@ -54,12 +54,12 @@ const GalleryDetails = (() => {
                         value={location}
                         exclusive
                         onChange={handleChange}
-                        sx={{ width: '100%', marginTop: 1 }}
+                        sx={{ width: '100%', marginTop: { xs: 0, sm: 1, md: 1 }, }}
                     >
                     {
                         filters.map( (filter, index) => {
                             return (
-                                <ToggleButton key={index} value={filter.value} aria-label="list" sx={{ color: 'black', fontSize: { xs: '10px', md: '10px', lg: '15px' }, }}>
+                                <ToggleButton key={index} value={filter.value} aria-label="list" sx={{ color: 'black', fontSize: { xs: '8px', sm: '10px', md: '10px', lg: '15px' }, }}>
                                     {filter.location}
                                 </ToggleButton>
                             )
