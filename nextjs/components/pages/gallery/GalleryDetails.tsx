@@ -45,7 +45,8 @@ const GalleryDetails = (() => {
                     sx={{
                         height: '100%',
                         width: '100%',
-                        borderRight: '1px solid black'
+                        borderRight: '1px solid black',
+                        backgroundColor: '#333'
                     }} 
                 >
                     <ToggleButtonGroup
@@ -59,7 +60,7 @@ const GalleryDetails = (() => {
                     {
                         filters.map( (filter, index) => {
                             return (
-                                <ToggleButton key={index} value={filter.value} aria-label="list" sx={{ color: 'black', fontSize: { xs: '8px', sm: '10px', md: '10px', lg: '15px' }, }}>
+                                <ToggleButton key={index} value={filter.value} aria-label="list" sx={{ color: 'white', fontSize: { xs: '8px', sm: '10px', md: '10px', lg: '15px' }, }}>
                                     {filter.location}
                                 </ToggleButton>
                             )
@@ -75,7 +76,7 @@ const GalleryDetails = (() => {
                     alignItems: 'center',
                     height: '100%',
                     width: { xs: '80%', md: '85%' },
-                    overflowY: 'auto'
+                    overflowY: 'auto',
                 }} 
             >
                 <Box sx={{ height: '100%', width: '100%' }}>
@@ -84,7 +85,7 @@ const GalleryDetails = (() => {
                             filters[location].image.map( (filter: string, index: number) => {
                                 return (
                                     <Grid item xs={2} sm={2} md={2} lg={4} key={index}>
-                                        <Card sx={{ maxWidth: 345, m: 2 }} key={index}>
+                                        <Card sx={{ maxWidth: 345, m: 2, boxShadow: 'rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px' }} key={index} >
                                             <CardActionArea>
                                             <CardMedia
                                                 component="img"

@@ -49,8 +49,12 @@ const About = (() => {
                     sx={{ 
                         display: 'flex',
                         alignItems: 'center',
-                        height: { xs: 400, md: 900 },
+                        height: { xs: 900, md: 900 },
                         width: '100%',
+                        backgroundImage: 'url(lag-7.jpg)',
+                        backgroundSize: 'cover',
+                        backgroundColor: '#404040',
+                        backgroundBlendMode: 'overlay'
                     }} 
                 >
                     <AboutGallery />

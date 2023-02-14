@@ -40,21 +40,23 @@ const AboutGallery = (() => {
                 width: '90%',
             }}
         >
-          <Typography variant="h4" gutterBottom sx={{ color: 'green' }}>
+          <Typography variant="h4" gutterBottom sx={{ color: 'white' }}>
               TOPNOTCHERS
           </Typography>
           {
             topnotchers.map( (topnotcher, index) => {
                 return (
-                    <Accordion key={index} expanded={expanded === `panel${index}`} onChange={handleChange(`panel${index}`)}>
+                    <Accordion key={index} expanded={expanded === `panel${index}`} onChange={handleChange(`panel${index}`)}
+                               sx={{ background: 'none', color: 'black' }}>
                     <AccordionSummary
                       expandIcon={<ExpandMoreIcon />}
                       aria-controls="panel1a-content"
                       id="panel1a-header"
+                      sx={{ background: 'white', color: 'black' }}
                     >
                       <Typography>{topnotcher.title}</Typography>
                     </AccordionSummary>
-                    <AccordionDetails sx={{ display: 'flex', alignItems:'center' }}>
+                    <AccordionDetails sx={{ display: 'flex', alignItems:'center', background: 'lightgreen' }}>
                       <AboutGalleryDetails cards={topnotcher.card} />
                     </AccordionDetails>
                   </Accordion>

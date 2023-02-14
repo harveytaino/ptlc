@@ -20,7 +20,12 @@ const Header = ( () => {
                             flex: 1
                             }}
                     >
-                        <img src="ptlc_logo.png" alt="logo" style={{height: 50, width: 50}}/>
+                        <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex' }}}>
+                            <img src="ptlc_logo.png" alt="logo" style={{height: 50, width: 50}}/>
+                        </Box>
+                        <Box sx={{ display: { xs: 'flex', sm: 'flex', md: 'none' }}}>
+                            <img src="ptlc_logo.png" alt="logo" style={{height: 30, width: 30}}/>
+                        </Box>
                         <Typography
                             variant="h6"
                             component="div"
