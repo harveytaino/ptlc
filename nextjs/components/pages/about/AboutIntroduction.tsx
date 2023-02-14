@@ -1,5 +1,7 @@
 import emailjs from '@emailjs/browser'
 import { useState, forwardRef } from 'react';
+import getConfig from 'next/config';
+const { publicRuntimeConfig } = getConfig();
 
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -73,7 +75,7 @@ const AboutContent = (() => {
         setSnackBarMessage('Email Sending!')
         setSnackbarOpen(true)
 
-        emailjs.send(process.env.EMAIL_SERVICE_ID ?? 'Test', process.env.EMAIL_TEMPLATE ?? 'Test', email, process.env.EMAIL_PUBLIC_KEY ?? 'Test')
+        emailjs.send(publicRuntimeConfig.EMAIL_SERVICE_ID ?? 'Test', publicRuntimeConfig.EMAIL_TEMPLATE ?? 'Test', email, publicRuntimeConfig.EMAIL_PUBLIC_KEY ?? 'Test')
             .then(function(response: any) {
                 setSnackBarStatus('success')
                 setSnackBarMessage('Email Sent Successfully!')
