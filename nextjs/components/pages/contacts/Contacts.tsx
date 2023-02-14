@@ -14,7 +14,7 @@ const Contacts = ( () => {
                 sx={{ 
                     display: 'flex',
                     marginTop: 9,
-                    height: '92vh',
+                    height: 900,
                     width: '100%',
                 }} 
             >

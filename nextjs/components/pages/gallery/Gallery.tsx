@@ -7,17 +7,28 @@ const Gallery = (() => {
     return (
         <>
             <Layout title='Gallery' />
-            <Box justifyContent="space-between"
+            <Box 
                 sx={{ 
-                    display: 'flex',
-                    alignItems: 'center',
                     marginTop: 9,
                     height: '92vh',
                     width: '100%',
+                    overflowY: 'auto',
+                    borderBottom: '5px solid green',
                 }} 
+            justifyContent="space-between"
             >
-                <GalleryDetails />
+                <Box justifyContent="space-between"
+                    sx={{ 
+                        display: 'flex',
+                        alignItems: 'center',
+                        height: '100%',
+                        width: '100%',
+                    }} 
+                >
+                    <GalleryDetails />
+                </Box>
             </Box>
+
         </>
     )
 })
