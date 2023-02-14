@@ -38,7 +38,7 @@ const GalleryDetails = (() => {
                     display: 'flex',
                     alignItems: 'center',
                     height: '100%',
-                    width: '10%',
+                    width: { xs: '20%', md: '15%' },
                 }} 
             >
                 <Box
@@ -54,12 +54,12 @@ const GalleryDetails = (() => {
                         value={location}
                         exclusive
                         onChange={handleChange}
-                        sx={{ width: '100%' }}
+                        sx={{ width: '100%', marginTop: 1 }}
                     >
                     {
                         filters.map( (filter, index) => {
                             return (
-                                <ToggleButton key={index} value={filter.value} aria-label="list" sx={{ color: 'black' }}>
+                                <ToggleButton key={index} value={filter.value} aria-label="list" sx={{ color: 'black', fontSize: { xs: '10px', md: '10px', lg: '15px' }, }}>
                                     {filter.location}
                                 </ToggleButton>
                             )
@@ -74,16 +74,16 @@ const GalleryDetails = (() => {
                     display: 'flex',
                     alignItems: 'center',
                     height: '100%',
-                    width: '90%',
+                    width: { xs: '80%', md: '85%' },
                     overflowY: 'auto'
                 }} 
             >
                 <Box sx={{ height: '100%', width: '100%' }}>
-                        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+                        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 2, sm: 4, md: 4, lg: 12 }}>
                         {
                             filters[location].image.map( (filter: string, index: number) => {
                                 return (
-                                    <Grid item xs={2} sm={2} md={3} key={index}>
+                                    <Grid item xs={2} sm={2} md={2} lg={4} key={index}>
                                         <Card sx={{ maxWidth: 345, m: 2 }} key={index}>
                                             <CardActionArea>
                                             <CardMedia
