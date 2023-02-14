@@ -26,22 +26,19 @@ const GeneralInformation = ( () => {
         <>
             <Box
                 sx={{ 
-                    margin: 5,
-                    padding: 3,
-                    height: '30%',
-                    width: '90%',
-                    border: '2px solid white'
+                    width: {sm: '90%', md: '40%'},
+                    margin: {sm: 'auto', md: '0'},
                 }} 
             >
-                <Box sx={{display: 'flex', alignItems: 'center', marginBottom: 2, borderBottom: '1px solid white'}}>
+                <Box sx={{display: 'flex', alignItems: 'center', marginBottom: 2 }}>
                     <InfoIcon sx={{ marginRight: 1 }} />
                     <Typography variant="h6" >
-                        General Information
+                        Contact Information
                     </Typography>
                 </Box>
 
                 <Box sx={{display: 'flex', alignItems: 'center', marginBottom: 2 }}>
-                    <BusinessIcon sx={{ marginRight: 1 }} />
+                    <MapsHomeWorkIcon sx={{ marginRight: 1 }} />
                     <Typography variant="subtitle2" >
                         Progressive Training and Learning Center
                     </Typography>
@@ -49,21 +46,21 @@ const GeneralInformation = ( () => {
 
                 <Box sx={{display: 'flex', alignItems: 'center', marginBottom: 2}}>
                     <HomeIcon sx={{ marginRight: 1 }}  />
-                    <Typography variant="subtitle2" >
+                    <Typography variant="subtitle2"  >
                         35 Roxville Subdivision, Saog, Marilao, Bulacan
                     </Typography>
                 </Box>
 
                 <Box sx={{display: 'flex', alignItems: 'center', marginBottom: 2}}>
                     <CallIcon sx={{ marginRight: 1 }} />
-                    <Typography variant="subtitle2" >
+                    <Typography variant="subtitle2"  >
                         (044) 322-9851
                     </Typography>
                 </Box>
 
                 <Box sx={{display: 'flex', alignItems: 'center', marginBottom: 2}}>
                     <MailIcon sx={{ marginRight: 1 }}  />
-                    <Typography variant="subtitle2" >
+                    <Typography variant="subtitle2"  >
                         abelardomarvaiii@gmail.com
                     </Typography>
                 </Box>
@@ -71,14 +68,12 @@ const GeneralInformation = ( () => {
 
             <Box
                 sx={{ 
-                    margin: 5,
-                    padding: 3,
-                    width: '90%',
-                    border: '2px solid white'
+                    width: {sm: '90%', md: '40%'},
+                    margin: {sm: 'auto', md: '0'},
                 }} 
             >
 
-                <Box sx={{display: 'flex', alignItems: 'center', marginBottom: 2, borderBottom: '1px solid white'}}>
+                <Box sx={{display: 'flex', alignItems: 'center', marginBottom: 2}}>
                     <BusinessIcon sx={{ marginRight: 1 }} />
                     <Typography variant="h6" >
                         Branches

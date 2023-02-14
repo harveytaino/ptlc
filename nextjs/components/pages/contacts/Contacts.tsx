@@ -10,29 +10,28 @@ const Contacts = ( () => {
     return (
         <>
             <Layout title='Contacts' />
-            <Box justifyContent="space-between"
+            <Box 
                 sx={{ 
-                    display: 'flex',
-                    marginTop: 9,
-                    height: 900,
+                    marginTop: { xs: 7, md: 9 },
+                    height: '92vh',
                     width: '100%',
+                    overflowY: 'auto',
                 }} 
             >
                 <Box justifyContent="space-between"
                     sx={{ 
-                        display: 'flex',
                         height: '100%',
-                        width: '70%',
+                        width: '100%',
                     }} 
                 >
                     <Branches />
                 </Box>
                 <Box justifyContent="space-between"
                     sx={{ 
-                        height: '100%',
-                        width: '30%',
-                        background: 'green',
-                        color: 'white'
+                        display: 'flex',
+                        flexDirection: {xs: 'column', sm: 'column', md: 'row'},
+                        width: '100%',
+                        padding: 5
                     }} 
                 >
                     <GeneralInformation />

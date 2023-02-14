@@ -41,54 +41,38 @@ const Branches = ( () => {
     return (
         <>
             <Box
-                sx={{ 
-                    margin: 5,
+                sx={{
+                    height: '100%', 
                     width: '100%',
-                    border: '1px solid black',
                     boxShadow: 'rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px'
                 }} 
             >
                 <Box
                     sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        height: '5%',
-                        width: '100%',
-                        borderBottom: '1px solid black',
-                        backgroundColor: 'green'
-                    }} 
-                >
-                    <Typography variant="h5" sx={{ margin: 'auto', color: 'white' }}>
-                        MAPS
-                    </Typography>
-                </Box>
-                <Box
-                    sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        height: '95%',
-                        width: '100%',
-                    }} 
-                >
-                <Box
-                    sx={{
                         height: '100%',
-                        width: '20%',
-                        borderRight: '1px solid black'
+                        width: '100%',
+                    }} 
+                >
+                <Box
+                    sx={{
+                        height: { xs: '5%', md: '8%' },
+                        width: '100%',
+                        backgroundColor: '#333',
+                        marginTop: { sm: 1, md: 1, lg: 1 }
                     }} 
                 >
                     <ToggleButtonGroup
                         color='success'
-                        orientation="vertical"
+                        orientation="horizontal"
                         value={locationIframe}
                         exclusive
                         onChange={handleChange}
-                        sx={{ width: '100%' }}
+                        sx={{ height: '100%', width: '100%', }}
                     >
                     {
                         locations.map( (location, index) => {
                             return (
-                                <ToggleButton key={index} value={location.value} aria-label="list" sx={{ color: 'black' }}>
+                                <ToggleButton key={index} value={location.value} aria-label="list" sx={{ color: 'white', fontSize: { xs: '8px', sm: '10px', md: '10px', lg: '15px' }, }}>
                                     {location.label}
                                 </ToggleButton>
                             )
@@ -98,17 +82,14 @@ const Branches = ( () => {
                 </Box>
                 <Box
                     sx={{
-                        height: '100%',
-                        width: '80%',
+                        height: { xs: '95%', md: '92%',  },
+                        width: '100%',
                     }} 
                 >
-
-                    <div style={{ width: '100%', height:'100%' }}>
                         <iframe width="100%" height="100%"
                             src={locations[locationIframe].iframe}
                         >
                         </iframe>
-                    </div>
                 </Box>
                 </Box>
             </Box>
