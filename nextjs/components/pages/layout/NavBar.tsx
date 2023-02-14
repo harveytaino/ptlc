@@ -26,8 +26,8 @@ const NavBar = ( () => {
     const [value, setValue] = useState(router.pathname);
 
     const links:LinkTabProps[] = [
-        { label:'About', href:'/about', value:'/about', icon: <HomeIcon />},
-        { label:'Gallery', href:'/gallery', disabled: true, value:'/gallery', icon: <CollectionsIcon /> },
+        { label:'About', href:'/about', disabled: false, value:'/about', icon: <HomeIcon />},
+        { label:'Gallery', href:'/gallery', disabled: false, value:'/gallery', icon: <CollectionsIcon /> },
         { label:'Contacts', href:'/contacts', disabled: false, value:'/contacts', icon: <ContactsIcon /> },
     ]
 
@@ -43,11 +43,56 @@ const NavBar = ( () => {
 
     return (
         <>
-            <Box sx={{ width: '100%' }}>
+            {/* Responsive Medium and Low */}
+            <Box sx={{ width: '100%', flexGrow: 1, display: { xs: 'flex', md: 'none' }}}>
                 <Tabs
                     value={value}
                     onChange={handleChange}
                     TabIndicatorProps={{style: {background:'green', color:'green'}}}
+                    sx={{ flexGrow: 1, display: { xs: 'block', md: 'none' }, fontSize: 15 }}
+                >
+                    {
+                        links.map( (link, index) => {
+                            if (link?.disabled) {
+                                return (
+                                    <Tooltip key={index} title="Coming Soon!">
+                                        <span>
+                                            <Tab 
+                                                 key={index}
+                                                 icon={link.icon} 
+                                                 iconPosition="start" 
+                                                 href={link.href} 
+                                                 value={link.value} 
+                                                 disabled 
+                                                 style={{color: 'black'}}
+                                            />
+                                        </span>
+                                    </Tooltip>
+                                )
+                            } else {
+                                return (
+                                    <Tab 
+                                        key={index}
+                                        onClick={navigate} 
+                                        icon={link.icon} 
+                                        iconPosition="start" 
+                                        href={link.href} 
+                                        value={link.value} 
+                                        style={{color: 'green'}}
+                                    />     
+                                )
+                            }
+                        })
+                    }
+                </Tabs>
+            </Box>
+            {/* Responsive Medium and Up */}
+            <Box sx={{ width: '100%', flexGrow: 1, display: { xs: 'none', md: 'flex' }}}>
+                <Tabs
+                    value={value}
+                    onChange={handleChange}
+                    TabIndicatorProps={{style: {background:'green', color:'green'}}}
+                    sx={{ flexGrow: 1, display: { xs: 'none', md: 'block' }, fontSize: 30 }}
                 >
                     {
                         links.map( (link, index) => {

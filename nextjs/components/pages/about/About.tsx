@@ -1,4 +1,5 @@
 import Layout from '@/components/pages/layout/Layout'
+import AboutIntroduction from '@/components/pages/about/AboutIntroduction'
 import AboutContent from '@/components/pages/about/AbooutContent'
 import AboutGallery from '@/components/pages/about/AboutGallery'
 
@@ -8,29 +9,52 @@ const About = (() => {
     return (
         <>
             <Layout title='About' />
-            <Box justifyContent="space-between"
+            <Box 
                 sx={{ 
-                    display: 'flex',
-                    alignItems: 'center',
                     marginTop: 9,
                     height: '92vh',
                     width: '100%',
-                    borderBottom: '5px solid green',
-                    backgroundImage: 'url(about_bg.jpg)',
-                    backgroundSize: 'cover'
+                    overflowY: 'auto'
                 }} 
-            >
-                <AboutContent />
-            </Box>
-            <Box 
-                sx={{ 
-                    display: 'flex',
-                    alignItems: 'center',
-                    height: 900,
-                    width: '100%',
-                }} 
-            >
-                <AboutGallery />
+            justifyContent="space-between">
+                <Box justifyContent="space-between"
+                    sx={{ 
+                        display: 'flex',
+                        alignItems: 'center',
+                        height: { xs: 400, md: 900 },
+                        width: '100%',
+                        borderBottom: '5px solid green',
+                        backgroundImage: 'url(lag-1.jpg)',
+                        backgroundSize: 'cover',
+                        backgroundColor: '#404040',
+                        backgroundBlendMode: 'overlay'
+                    }} 
+                >
+                    <AboutIntroduction />
+                </Box>
+                <Box justifyContent="space-between"
+                    sx={{ 
+                        display: 'flex',
+                        alignItems: 'center',
+                        height: { xs: 400, md: 900 },
+                        width: '100%',
+                        borderBottom: '5px solid green',
+                        backgroundImage: 'url(about_bg.jpg)',
+                        backgroundSize: 'cover',
+                    }} 
+                >
+                    <AboutContent />
+                </Box>
+                <Box 
+                    sx={{ 
+                        display: 'flex',
+                        alignItems: 'center',
+                        height: { xs: 400, md: 900 },
+                        width: '100%',
+                    }} 
+                >
+                    <AboutGallery />
+                </Box>
             </Box>
         </>
     )
