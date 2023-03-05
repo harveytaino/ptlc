@@ -10,7 +10,7 @@ const Gallery = (() => {
             <Box 
                 sx={{ 
                     marginTop: { xs: 7, md: 9 },
-                    height: { xs: '93.6vh', sm: '93.6vh', md: '91.8vh', lg: '92.2vh' },
+                    height: { xs: '93.6vh', sm: '93.6vh', md: '91.8vh', lg: '92.5vh' },
                     width: '100%',
                     overflowY: 'auto',
                     borderBottom: '5px solid green',
