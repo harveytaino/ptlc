@@ -21,7 +21,7 @@ const About = (() => {
                     sx={{ 
                         display: 'flex',
                         alignItems: 'center',
-                        height: { xs: 400, md: 900 },
+                        height: 900,
                         width: '100%',
                         borderBottom: '5px solid green',
                         backgroundImage: 'url(lag-1.jpg)',
@@ -49,7 +49,7 @@ const About = (() => {
                     sx={{ 
                         display: 'flex',
                         alignItems: 'center',
-                        height: { xs: 900, md: 900 },
+                        height: 900,
                         width: '100%',
                         backgroundImage: 'url(lag-7.jpg)',
                         backgroundSize: 'cover',

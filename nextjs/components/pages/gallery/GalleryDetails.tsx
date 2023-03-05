@@ -18,7 +18,7 @@ type Filter = {
 }
 
 const filters: Filter[] = [
-    { location: 'Bulacan', value: 0, image: [] },
+    { location: 'Bulacan', value: 0, image: ['bul-1.jpg', 'bul-2.jpg', 'bul-3.jpg', 'bul-4.jpg', 'bul-5.jpg', 'bul-6.jpg', 'bul-7.jpg', 'bul-8.jpg', 'bul-9.jpg', 'bul-10.jpg','bul-11.jpg','bul-12.jpg','bul-13.jpg','bul-14.jpg'] },
     { location: 'Quezon City', value: 1, image: ['qc-1.jpg', 'qc-2.jpg', 'qc-3.jpg', 'qc-4.jpg', 'qc-5.jpg', 'qc-6.jpg', 'qc-7.jpg', 'qc-8.jpg'] },
     { location: 'Laguna', value: 2, image: ['lag-1.jpg', 'lag-2.jpg', 'lag-3.jpg', 'lag-4.jpg', 'lag-5.jpg', 'lag-6.jpg', 'lag-7.jpg', 'lag-8.jpg', 'lag-9.jpg', 'lag-10.jpeg'] },
 ]
@@ -81,11 +81,17 @@ const GalleryDetails = (() => {
             >
                 <Box sx={{ height: '100%', width: '100%' }}>
                         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 2, sm: 4, md: 4, lg: 12 }}>
-                        {
+                        {   
                             filters[location].image.map( (filter: string, index: number) => {
                                 return (
                                     <Grid item xs={2} sm={2} md={2} lg={4} key={index}>
-                                        <Card sx={{ maxWidth: 345, m: 2, boxShadow: 'rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px' }} key={index} >
+                                        <Card sx={{ 
+                                                maxWidth: 345, 
+                                                m: 2, 
+                                                boxShadow: 'rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px' 
+                                            }} 
+                                            key={index} 
+                                        >
                                             <CardActionArea>
                                             <CardMedia
                                                 component="img"
@@ -98,7 +104,6 @@ const GalleryDetails = (() => {
                                     </Grid>
                                 )
                             })
-
                         }
                         </Grid>
                 </Box>
